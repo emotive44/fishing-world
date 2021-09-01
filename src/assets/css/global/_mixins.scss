@@ -1,0 +1,126 @@
+@import 'functions.scss';
+
+
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+@mixin break-points($point, $pixels: none) {
+  @if ($point == $bp-desktop-large) {
+    @media(max-width: $breakpoint-desktop-large) {
+      @content;
+    }
+  } 
+  @else if ($point == $bp-desktop) {
+    @media(max-width: $breakpoint-desktop) {
+      @content;
+    }
+  } 
+  @else if ($point == $bp-tablet) {
+    @media(max-width: $breakpoint-tablet) {
+      @content;
+    }
+  } 
+  @else if ($point == $bp-phone) {
+    @media(max-width: $breakpoint-phone) {
+      @content;
+    }
+  }
+  @else if ($point == $bp-custom) {
+    @media(max-width: $pixels + px) {
+      @content;
+    }
+  }
+}
+
+@mixin background-hover($base, $hover) {
+  @include set-background($base);
+
+  @if($base == transparent) {
+    color: $hover;
+  }
+
+  &:hover {
+    @include set-background($hover);
+  }
+}
+
+@mixin theme($themes) {
+  @each $theme, $map in $themes {
+    :global(.theme--#{$theme}) & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@mixin fade($type, $duration: 0.5, $opacity: 1) {
+  @if ($type == 'hide') {
+    opacity: 0;
+    visibility: hidden;
+    transition: ease-in-out #{$duration}s;
+    transition-property: visibility opacity;
+  }
+  @else if ($type == 'show') {
+    opacity: $opacity;
+    visibility: visible;
+    transition: ease-in #{$duration}s;
+    transition-property: visibility opacity;
+  }
+}
+
+@mixin position($position: absolute, $top: null, $right: null, $bottom: null, $left: null, $z-index: 0) {
+  position: $position;
+  z-index: $z-index;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+  top: $top;
+}
+
+@mixin border($type: null, $radius: null, $size: 1, $color: $primary-border-color) {
+  @if($type and $type != 'top' and $type != 'right' and $type != 'bottom' and $type != 'left') {
+    @include theme($theme) {
+      border-#{$type}: get-theme-color($color);
+    }
+  }
+  @else if($type) {
+    @include theme($theme) {
+      border-#{$type}: #{$size}px solid get-theme-color($color);
+    }
+  }
+  @else {
+    @include theme($theme) {
+      border: #{$size}px solid get-theme-color($color);
+      border-radius: #{$radius};
+    }
+  }
+}
+
+@mixin color($color: $primary-text-color) {
+  @include theme($theme) {
+    color: get-theme-color($color);
+  }
+}
+
+@mixin bg-color($color: $body-color) {
+  @include theme($theme) {
+    background-color: get-theme-color($color);
+  }
+}
+
+@mixin vertically-centred {
+  display: flex;
+  align-items: center;
+}
+
+@mixin multiple-transition($duration, $properties...) {
+  transition: $duration ease-in;
+  transition-property: $properties;
+}

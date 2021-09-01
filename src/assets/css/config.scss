@@ -1,0 +1,14 @@
+@import 'reset.scss';
+@import 'typography.scss';
+@import './global';
+
+
+html {
+  background-color: get-theme-color($body-color, 'default');
+  color: get-theme-color($primary-text-color, 'default');
+
+  &.theme--dark {
+    background-color: get-theme-color($body-color, 'dark');
+    color: get-theme-color($primary-text-color, 'dark');
+  }
+}

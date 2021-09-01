@@ -1,0 +1,12 @@
+@import '../styles.scss';
+
+
+.label { margin: 0 5px; cursor: pointer; align-items: flex-end; display: flex; flex-direction: row-reverse; }
+  .label.left { flex-direction: row; }
+  .label.left > span { margin-right: 1rem; }
+  .label > span { margin-left: 1rem; }
+  .wrapper { @include border(null, 50px, 2.5, $secondary-border-color); @include vertically-centred; position: relative; justify-content: center; width: 23px; height: 23px; background-color: transparent; }
+  .wrapper.hover { @include border(color); transition: ease-in-out 0.3s border-color; }
+  .wrapper.check { @include border($size: 2.5, $color: $secondary-border-color); }
+  .checked { @include bg-color($secondary-border-color); content: ""; width: 9px; height: 9px; border-radius: 50px; opacity: 0; transition: ease-in-out 0.4s opacity; }
+  input:checked + .checked { opacity: 1; }

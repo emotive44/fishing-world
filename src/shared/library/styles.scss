@@ -1,0 +1,27 @@
+@import "../../assets/css/global";
+
+//    UI-Components colors      //
+$info-color: get-color(blue, light);
+$info-hover-color: get-color(blue, base);
+$link-hover-color: get-color(blue, dark);
+$secondary-color: get-color(gray, dark);
+$secondary-hover-color: get-color(gray, darker);
+$success-color: get-color(green, base);
+$success-hover-color: get-color(green, dark);
+$danger-color: get-color(red, base);
+$danger-hover-color: get-color(red, dark);
+$warning-color: get-color(yellow, base);
+$warning-hover-color: get-color(yellow, dark);
+$light-color: get-color(gray, light);
+$light-hover-color: get-color(gray, base);
+$dark-color: get-color(black, lighter);
+$dark-hover-color: get-color(black, darker);
+
+$notify-success-background-color: get-color(green, lighter);
+$notify-success-color: get-color(green, darker);
+$notify-error-background-color: get-color(red, lighter);
+$notify-error-color: get-color(red, darker);
+$notify-info-background-color: get-color(blue, lighter);
+$notify-info-color: get-color(blue, darker);
+$notify-warning-background-color: get-color(yellow, lighter);
+$notify-warning-color: get-color(yellow, darker);

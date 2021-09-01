@@ -1,0 +1,10 @@
+@import '../styles.scss';
+
+
+.date-picker { @include border($radius: 3px); display: flex; height: 35px; min-width: 13rem; }
+  .date-picker .input-wrapper { width: 100%; position: relative; }
+    .date-picker .input-wrapper .value { display: inline-block; margin: 0.7rem; }
+    .date-picker .input-wrapper .input { @include position(absolute, -5px, 0, $z-index: 12); width: 100%; height: 43px; cursor: pointer; opacity: 0; box-sizing: border-box; }
+      .date-picker .input-wrapper .input::-webkit-calendar-picker-indicator { @include position(absolute, 0, $left: 0); cursor: pointer; width: 100%; height: 100%; margin: 0; padding: 0; }
+  .date-picker .button { position: relative; }
+    .date-picker .button img { @include position(absolute, 2px, 4px, $z-index: -1); height: 30px; }
