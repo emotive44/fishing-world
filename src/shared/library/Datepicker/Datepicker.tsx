@@ -1,7 +1,8 @@
 import React, { FC, useState } from 'react';
-import classes from './Datepicker.module.scss';
-
 import moment from 'moment';
+
+import { calendarSrc } from '../../../assets/images';
+import classes from './Datepicker.module.scss';
 
 
 const months: any = {
@@ -111,7 +112,7 @@ const Datepicker:FC<DatepickerProps> = ({
           />
         </div>
         <span className={classes.button}>
-          <img src='/calendar.png' alt='' />
+          <img src={calendarSrc} alt='' />
         </span>
       </div>
     </div>

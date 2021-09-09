@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import classes from './Spinner.module.scss';
 
+import { spinnerSrc } from '../../../assets/images';
+import classes from './Spinner.module.scss';
 
 interface SpinnerProps {
   btnSpinner?: boolean
@@ -18,7 +19,7 @@ const Spinner: FC<SpinnerProps> = ({
   return (
     <div className={spinnerClasses.join(' ')}>
       <img
-        src="/spinner.gif"
+        src={spinnerSrc}
         alt=""
       />
     </div>

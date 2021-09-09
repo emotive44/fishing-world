@@ -7,6 +7,7 @@ import useNetworkStatus from "../hooks/useNetworkStatus";
 
 // import Navbar from '../components/Navbar/Navbar';
 const Home = lazy(() => import('../../modules/Home/Home'));
+const UI = lazy(() => import('../../modules/UI/UI'))
 // const Dashboard = lazy(() => import('../../modules/Dashboard/Dashboard'));
 // const UIComponents = lazy(() => import('../../modules/UIComponents/UIComponents'));
 
@@ -49,6 +50,7 @@ const Routes: FC<RoutesProps> = ({ isAuth }) => {
       <Switch>
         <Suspense fallback={Loading}>
           <Route exact path="/" component={Home} />
+          <Route exact path='/ui' component={UI} />
           {/* <Route path='/ui-components' component={UIComponents} />
           <PrivateRoute exact path="/dashboard" isAuth={isAuth} component={Dashboard} /> */}
         </Suspense>
