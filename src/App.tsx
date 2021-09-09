@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import Routes from './shared/routes/Routes';
 import { LOCALSTORAGE_THEME, THEME_DEFAULT } from './shared/constants';
+import styles from './App.module.scss';
 
 function App() {
   useEffect(() => {
@@ -17,9 +18,14 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Routes isAuth={false} />
-    </Router>
+    <main className={styles.modulesWrapper}>
+      <aside className={styles.sideBar}>SideBar</aside>
+      <section className={styles.routerCnt}>
+        <Router>
+          <Routes isAuth={false} />
+        </Router>
+      </section>
+    </main>
   );
 };
 

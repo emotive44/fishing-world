@@ -91,12 +91,12 @@ const UIComponents:FC = () => {
 
   return (
     <>
-      {/* <Modal 
+      <Modal 
         main                  = {ModalMain}
         title                 = "Modal Title"
         footer                = {ModalFooter}
       />
-     */}
+    
       <span onClick={submitHandler}>Submit</span>
       <div className={classes.app}>
         <div>
