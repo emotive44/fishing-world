@@ -1,7 +1,0 @@
-@import '../../assets/css/global';
-
-.home {
-  @include break-points($point: custom, $pixels: 190) {
-    color: red;
-  }
-}

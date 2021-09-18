@@ -19,7 +19,7 @@
     .sign .wrapper h3 { @include position($top: -0.5em); @include color($body-color); width: 100%; text-align: center; }
     .sign .icon { position: absolute; padding: 1em; border-radius: 50%; }
 
-@include break-points(phone) {
+@include break-points($bp-phone) {
   .sign { left: calc(5% - 7px); border-right: none !important; width: 90%; margin-bottom: 2rem; }
     .sign:nth-child(odd) { @include border(left, $size: 5.5); border-top-left-radius: 35px; border-top-right-radius: 0; }
       .sign:nth-child(odd) .icon { right: -25px; left: auto; }

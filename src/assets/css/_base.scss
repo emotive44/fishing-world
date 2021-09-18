@@ -105,7 +105,7 @@
 .col-auto { width: auto; overflow: hidden; }
 
 
-@include break-points(tablet) {
+@include break-points($bp-tablet) {
   .row-m-v { flex-direction: column; }
   .row-m-wrap { flex-wrap: wrap; }
 
@@ -114,7 +114,7 @@
   .col-t-100 { width: 100% !important; }
 }
 
-@include break-points(phone) {
+@include break-points($bp-phone) {
   .col-m-50 { width: 50% !important; }
   .col-m-100 { width: 100% !important; }
 }

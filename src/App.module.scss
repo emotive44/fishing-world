@@ -1,2 +1,24 @@
-.sideBar { overflow-x: hidden; overflow-y: auto; width: 22.4rem; background-color: red; position: absolute; left: 0; top: 0; bottom: 0; z-index: 50; }
+@import './assets/css/global';
+
+.sideBar { overflow-x: hidden; overflow-y: auto; width: 22.4rem; position: absolute; left: 0; top: 0; bottom: 0; z-index: 50; }
 .routerCnt { overflow-x: hidden;  overflow-y: auto; position: absolute; top: 0; right: 0; bottom: 0; left: 22.4rem; }
+
+@include break-points($bp-desktop-large) {
+  .sideBar { background-color: red; }
+}
+
+@include break-points($bp-desktop) {
+  .sideBar { background-color: orange; }
+}
+
+@include break-points($bp-laptop) {
+  .sideBar { background-color: gray; }
+}
+
+@include break-points($bp-tablet) {
+  .sideBar { background-color: rebeccapurple }
+}
+
+@include break-points($bp-phone) {
+  .sideBar { background-color: green; }
+}

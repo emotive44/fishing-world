@@ -1,14 +1,15 @@
 // breakpoints
-$breakpoint-desktop-large   : 1600px;
-$breakpoint-desktop         : 1250px;
-$breakpoint-tablet          : 900px;
-$breakpoint-phone           : 600px;
+$breakpoint-desktop-large   : 1601px;
+$breakpoint-desktop         : 1600px;
+$breakpoint-laptop          : 1024px;
+$breakpoint-tablet          : 768px;
+$breakpoint-phone           : 480px;
 
 $bp-desktop-large           : desktop-large;
 $bp-desktop                 : desktop;
+$bp-laptop                  : laptop;
 $bp-tablet                  : tablet;
 $bp-phone                   : phone;
-$bp-custom                  : custom;
 
 // font-families
 $sans-serif                 : 'Open Sans', sans-serif;

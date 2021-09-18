@@ -6,29 +6,30 @@
   color: set-text-color($color);
 }
 
-@mixin break-points($point, $pixels: none) {
-  @if ($point == $bp-desktop-large) {
-    @media(max-width: $breakpoint-desktop-large) {
-      @content;
-    }
-  } 
-  @else if ($point == $bp-desktop) {
-    @media(max-width: $breakpoint-desktop) {
-      @content;
-    }
-  } 
-  @else if ($point == $bp-tablet) {
-    @media(max-width: $breakpoint-tablet) {
-      @content;
-    }
-  } 
-  @else if ($point == $bp-phone) {
+
+@mixin break-points($point) {
+  @if ($point == $bp-phone) {
     @media(max-width: $breakpoint-phone) {
       @content;
     }
   }
-  @else if ($point == $bp-custom) {
-    @media(max-width: $pixels + px) {
+  @else if ($point == $bp-tablet) {
+    @media (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  } 
+  @else if ($point == $bp-laptop) {
+    @media (max-width: $breakpoint-laptop) {
+      @content;
+    }
+  } 
+  @else if ($point == $bp-desktop) {
+    @media (max-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+  @else if ($point == $bp-desktop-large) {
+    @media (min-width: $breakpoint-desktop-large) {
       @content;
     }
   }
