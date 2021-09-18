@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classes from './UI.module.scss';
 
-import useForm from '../../shared/hooks/useForm';
+import { useForm } from '../../shared/hooks';
 
 import {
   Input, TextArea, CheckBox, RadioBtn,

@@ -1,6 +1,6 @@
 import React, { FC, ReactElement, ReactNode, useEffect } from 'react';
 import classes from './SelectOption.module.scss';
-import useAnimateItemOnShow from '../../hooks/useAnimateItemOnShow';
+import { useAnimateItemOnShow } from '../../hooks';
 
 import Tag from '../Tag/Tag';
 import { IOption } from './Select';

@@ -3,7 +3,7 @@ import { Route, Router, Switch, useHistory } from "react-router-dom";
 
 import PrivateRoute from "./PrivateRoute";
 import { Notification } from "../library";
-import useNetworkStatus from "../hooks/useNetworkStatus";
+import { useNetworkStatus } from "../hooks";
 
 // import Navbar from '../components/Navbar/Navbar';
 const Home = lazy(() => import('../../modules/Home/Home'));

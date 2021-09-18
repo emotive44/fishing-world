@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import classes from './ImageGallery.module.scss';
-import useImageOrientation from '../../hooks/useImageOrientation';
+import { useImageOrientation } from '../../hooks';
 
 
 type TSize = 'small' | 'normal' | 'big';
