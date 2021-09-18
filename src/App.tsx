@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <main className={styles.modulesWrapper}>
+    <>
       <aside className={styles.sideBar}>
         SideBar
         <button onClick={() => setThemeMode()}>Change theme</button>
@@ -28,7 +28,7 @@ function App() {
           <Routes isAuth={token !== ''} />
         </Router>
       </section>
-    </main>
+    </>
   );
 };
 
