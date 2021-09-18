@@ -9,7 +9,7 @@ const Home = () => {
     <div className={classes.home}>
       Home
       <div className="row-4 row-m-wrap">
-        <div className="col-33 col-t-100 col-m-100 pad-4" style={{background: 'red'}}>
+        <div className="col-33 col-t-100 col-m-100 p-4" style={{background: 'red'}}>
         <Input
             leftIcon
             largeInput
@@ -23,7 +23,7 @@ const Home = () => {
             icon              = {<i className="fas fa-user" />}
           />
         </div>
-        <div className="col-33 col-t-50 col-m-100 pad-4" style={{background: 'green'}}>
+        <div className="col-33 col-t-50 col-m-100 p-4" style={{background: 'green'}}>
         <Input
             leftIcon
             largeInput
@@ -37,7 +37,7 @@ const Home = () => {
             icon              = {<i className="fas fa-user" />}
           />
         </div>
-        <div className="col-33 col-t-50 col-m-100 pad-4" style={{background: 'blue'}}>
+        <div className="col-33 col-t-50 col-m-100 p-4" style={{background: 'blue'}}>
         <Input
             leftIcon
             largeInput
