@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import './shared/config/axios';
-import { setAuthToken } from './shared/utils/axios';
-import setThemeMode from './shared/utils/themeMode';
+import { setAuthToken, setThemeMode } from './shared/utils';
 import Routes from './shared/routes/Routes';
 import { LOCALSTORAGE_TOKEN, LOCALSTORAGE_THEME } from './shared/constants';
 import styles from './App.module.scss';
