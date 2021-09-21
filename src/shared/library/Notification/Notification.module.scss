@@ -2,22 +2,22 @@
 
 
 .notification { @include break-points($bp-tablet) { width: 50%; }; @include break-points($bp-phone) { width: 85%; };  @include fade('hide', 1.5); @include position(fixed, $z-index: 12); display: flex; justify-content: space-between; min-width: 20rem; width: 30%; padding: 1rem; font-size: 1.4rem; border-radius: 0.3em; transition: ease-in-out transform 1.5s; }
-  .notification.bottom-left { bottom: 7rem; left: 4rem; }
-  .notification.bottom-right { bottom: 7rem; right: 4rem; }
-  .notification.top-right { top: 7rem; right: 4rem; }
-  .notification.top-left { top: 7rem; left: 4rem; }
-  .notification.bottom-left.closed,
-  .notification.top-left.closed { @include fade('hide', 1.5); transform: translateX(-100vw); }
-  .notification.bottom-right.closed,
-  .notification.top-right.closed { @include fade('hide', 1.5); transform: translateX(100vw); }
-  .notification.success { background-color: $notify-success-background-color; color: $notify-success-color; }
-  .notification.error { background-color: $notify-error-background-color; color: $notify-error-color; }
-  .notification.info { background-color: $notify-info-background-color; color: $notify-info-color; }
-  .notification.warning { background-color: $notify-warning-background-color; color: $notify-warning-color; }
-  .notification .content { padding: 0.5rem 0; width: 90%; }
-    .notification .content .title { display: flex; justify-content: center; margin-bottom: 1rem; }
-      .notification .content .title i {  font-size: 20px; margin-right: 0.4em; }
-      .notification .content .title .title-text { @include vertically-centred; }
-  .notification .close { @include vertically-centred; }
-    .notification .close i { cursor: pointer; font-size: 30px; }
-  .notification.show { @include fade('show', 1.5); transform: translateX(0); }
+.notification.bottom-left { bottom: 7rem; left: 4rem; }
+.notification.bottom-right { bottom: 7rem; right: 4rem; }
+.notification.top-right { top: 7rem; right: 4rem; }
+.notification.top-left { top: 7rem; left: 4rem; }
+.notification.bottom-left.closed,
+.notification.top-left.closed { @include fade('hide', 1.5); transform: translateX(-100vw); }
+.notification.bottom-right.closed,
+.notification.top-right.closed { @include fade('hide', 1.5); transform: translateX(100vw); }
+.notification.success { background-color: $notify-success-background-color; color: $notify-success-color; }
+.notification.error { background-color: $notify-error-background-color; color: $notify-error-color; }
+.notification.info { background-color: $notify-info-background-color; color: $notify-info-color; }
+.notification.warning { background-color: $notify-warning-background-color; color: $notify-warning-color; }
+  .content { padding: 0.5rem 0; width: 90%; }
+    .title { display: flex; justify-content: center; margin-bottom: 1rem; }
+      .title i {  font-size: 20px; margin-right: 0.4em; }
+      .title-text { @include vertically-centred; }
+  .close { @include vertically-centred; }
+    .close i { cursor: pointer; font-size: 30px; }
+.notification.show { @include fade('show', 1.5); transform: translateX(0); }
