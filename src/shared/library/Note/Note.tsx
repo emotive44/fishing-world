@@ -15,12 +15,12 @@ const Note: FC<NoteProps> = ({ className, children, size }) => {
   }
 
   return (
-    <div 
+    <p 
       className    =  {mainClasses.join(' ')}
       style        =  {{ fontSize: `${size}px` }}
     >
       {children}
-    </div>
+    </p>
   );
 	
 };

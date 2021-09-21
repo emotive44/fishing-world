@@ -53,7 +53,7 @@ const RadioBtn: FC<RadioBtnProps> = ({
         </div>
       </label>
     </div>
-  )
+  );
 }
 
 export default RadioBtn;

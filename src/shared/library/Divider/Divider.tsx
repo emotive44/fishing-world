@@ -22,11 +22,11 @@ const Divider: FC<DividerProps> = ({
   return (
     <h3 className={dividerClasses.join(' ')}>
       <small className={classes.left} />
-      <span>
+      <p>
         {title && title}
         {icon && icon}
         {img && <img src={img}  alt="" />}
-      </span>
+      </p>
       <small className={classes.right} />
     </h3>
   );

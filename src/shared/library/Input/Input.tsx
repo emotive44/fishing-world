@@ -93,12 +93,9 @@ const Input: FC<InputProps> = ({
     if(type === 'email' || type === 'search' || icon) setIsIcon(true);
   }, [setIsIcon, type, icon]);
 
-  return (
-    <>
-      <section
-        className={containerClasses.join(' ')}
-      >
-        {/* Default icons for types */}
+  const renderDefaultIcons = () => {
+    return (
+      <>
         {type === "password" && (
           <span className={iconClasses.join(' ')} style={{ cursor: 'pointer' }}>
             {showPass
@@ -117,11 +114,19 @@ const Input: FC<InputProps> = ({
             <i className="fas fa-search" />
           </span>
         )}
-        {/*  */}
+      </>
+    );
+  }
+
+  return (
+    <>
+      <div
+        className={containerClasses.join(' ')}
+      >
+        {/* Default icons for types */}
+        {renderDefaultIcons()}
         {icon && <span className={iconClasses.join(' ')}>{icon}</span>}
-
         {label && <label className={labelClasses.join(' ')}>{label}</label>}
-
         <input
           id            = {id}
           name          = {name}
@@ -140,7 +145,7 @@ const Input: FC<InputProps> = ({
           onClick       = {hoverHandler}
           onChange      = {(e) => callbackChange(e)}
         />
-      </section>
+      </div>
       {err && <p className={classes.errmsg}>{err}</p>}
     </>
   );

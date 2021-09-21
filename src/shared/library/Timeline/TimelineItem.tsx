@@ -49,7 +49,9 @@ const TimelineItem:FC<TimelineItemProps> = ({
       <div className={classes.wrapper} style={{ backgroundColor: colors[month] }}>
         <span className={classes['left-handle']} style={{ backgroundColor: colors[month] }} />
         <span className={classes['right-handle']} style={{ backgroundColor: colors[month] }} />
-        <h3>{moment(date).format(dateFormat)}</h3>
+        <h3>
+          <time>{moment(date).format(dateFormat)}</time>
+        </h3>
         {title && <h4>{title}</h4>}
         {children ? children : <p>{content}</p>}
       </div>

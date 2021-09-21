@@ -26,7 +26,7 @@ const CheckBox:FC<CheckBoxProps> = ({
   if(hover) wrapperClasses.push(classes.hover);
 
   return (
-    <section className={classes.container}>
+    <div className={classes.container}>
       <label htmlFor={id} className={labelClasses.join(' ')}>
         {label && 
           <span onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
@@ -49,7 +49,7 @@ const CheckBox:FC<CheckBoxProps> = ({
           <span className={classes.checked} />
         </div>
       </label>
-    </section>
+    </div>
   )
 }
 

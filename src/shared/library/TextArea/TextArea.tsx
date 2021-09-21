@@ -52,25 +52,27 @@ const TextArea: FC<TextAreaProps> = ({
   if(!cols && !rows) textAreaClasses.push(classes.size); // append default size 
   if(nonResize) textAreaClasses.push(classes.nonresize); // fixed size of textarea
 
-  return <section className={containerClasses.join(' ')}>
-    {label && <label htmlFor={id}> {label} </label> }
+  return (
+    <div className={containerClasses.join(' ')}>
+      {label && <label htmlFor={id}> {label} </label> }
 
-    <textarea 
-      id          = {id} 
-      name        = {name} 
-      cols        = {cols} 
-      rows        = {rows}
-      value       = {defaultValue && !value ? defaultValue : value}
-      readOnly    = {readonly}
-      required    = {required}
-      disabled    = {disabled}
-      autoFocus   = {autoFocus}
-      maxLength   = {maxLength}
-      placeholder = {placeHolder}
-      className   = {textAreaClasses.join(' ')}
-      onChange    = {(e) => calbackChange(e)}
-    />
-  </section>
+      <textarea 
+        id          = {id} 
+        name        = {name} 
+        cols        = {cols} 
+        rows        = {rows}
+        value       = {defaultValue && !value ? defaultValue : value}
+        readOnly    = {readonly}
+        required    = {required}
+        disabled    = {disabled}
+        autoFocus   = {autoFocus}
+        maxLength   = {maxLength}
+        placeholder = {placeHolder}
+        className   = {textAreaClasses.join(' ')}
+        onChange    = {(e) => calbackChange(e)}
+      />
+    </div>
+  );
 }
 
 export default TextArea;

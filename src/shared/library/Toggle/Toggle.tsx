@@ -23,7 +23,7 @@ const Toggle: FC<ToggleProps> = ({
   if(leftLabel) labelClasses.push(classes.left);
 
   return (
-    <div>
+    <>
       <label htmlFor={id} className={labelClasses.join(' ')}>
         {label && <span>{label}</span>}
         <input 
@@ -35,11 +35,11 @@ const Toggle: FC<ToggleProps> = ({
           className  = {classes.toggle} 
           onChange   = {callbackChange}
         />
-        <div className={classes.wrapper}>
+        <p className={classes.wrapper}>
           <span className={classes.checked}></span>
-        </div>
+        </p>
       </label>
-    </div>
+    </>
   )
 }
 

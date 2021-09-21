@@ -100,7 +100,7 @@ const Carousel: FC<CarouselProps> = ({
   }
 
   return (
-    <div className={classes.carousel}>
+    <article className={classes.carousel}>
       {!clickImgChange && (
         <div className={[classes.arrow, classes.left].join(' ')} onClick={getPreviousImg}>
           <i className="fas fa-arrow-left" />
@@ -119,7 +119,7 @@ const Carousel: FC<CarouselProps> = ({
           <i className="fas fa-arrow-right" />
         </div>
       )}
-    </div>
+    </article>
   );
 }
 

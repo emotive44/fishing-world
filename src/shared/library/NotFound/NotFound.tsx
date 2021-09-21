@@ -27,15 +27,12 @@ const NoFound: FC<NotFoundProps> = ({
   }
 
   return (
-    <div className={classes.nofound}>
-      {icon && <div className={classes.icon}> {icon} </div>}
-
+    <section className={classes.nofound}>
+      {icon && <span className={classes.icon}> {icon} </span>}
       {title && <h2> {title} </h2>}
-
-      {message && <div className={messageClasses.join(' ')}> {message} </div>}
-
+      {message && <p className={messageClasses.join(' ')}> {message} </p>}
       <div className={childrenClasses.join(' ')}> {children} </div>
-    </div>
+    </section>
   );
 };
 

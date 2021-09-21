@@ -17,12 +17,12 @@ const Spinner: FC<SpinnerProps> = ({
   }
 
   return (
-    <div className={spinnerClasses.join(' ')}>
+    <span className={spinnerClasses.join(' ')}>
       <img
         src={spinnerSrc}
         alt=""
       />
-    </div>
+    </span>
   );
 }
 

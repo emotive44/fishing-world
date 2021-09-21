@@ -138,7 +138,7 @@ const SelectOption:FC<SelectOptionProps> = ({
     <div ref={ref} className={[...optionClasses, classes[animateClass]].join(' ')} onClick={clickHendler} >
       {content}
       {checked && (
-         <span className={classes.checked}>
+        <span className={classes.checked}>
           <i className='fas fa-check' />
         </span>
       )}

@@ -183,7 +183,7 @@ const Select:FC<SelectProps> = ({
     <>
       <p>{label}</p>
       <div className={mainClasses.join(' ')} ref={selectRef}>
-        <div className={classes.select} onClick={toggleSelect} >
+        <div className={classes.select} onClick={toggleSelect}>
           <div className={classes['select-value']}>
               {!multiple && selectValue ? selectValue : placeholder} 
           </div>

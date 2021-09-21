@@ -83,7 +83,7 @@ const Notification: FC<NotificationProps> = ({
   }
 
   return (
-    <div className={notificationClasses.join(' ')} >
+    <div className={notificationClasses.join(' ')}>
       <div className={classes.content} >
         <div className={classes.title}>
           <i className={['fas', iconClass].join(' ')} />

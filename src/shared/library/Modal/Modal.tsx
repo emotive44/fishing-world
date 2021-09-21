@@ -28,25 +28,25 @@ const Modal:FC<ModalProps> = ({
   return (
     <>
       <section className={modalClasses.join(' ')}>
-      <header className={classes.header}>
-        <div className={classes['header-wrapper']}>
-          <Text fontWeight="900"> {title} </Text>
-        </div>
-        <span 
-          onClick         = {closeModal}
-          className       = {classes.close}
-        >
-          <i className='far fa-times-circle' />
-        </span>
-      </header>
+        <header className={classes.header}>
+          <div className={classes['header-wrapper']}>
+            <Text fontWeight="900"> {title} </Text>
+          </div>
+          <span 
+            onClick         = {closeModal}
+            className       = {classes.close}
+          >
+            <i className='far fa-times-circle' />
+          </span>
+        </header>
 
-      <CustomScroll size="small">
-        <main className={classes.main}> {main} </main>
-      </CustomScroll>
+        <CustomScroll size="small">
+          <article className={classes.main}> {main} </article>
+        </CustomScroll>
 
-      {footer && (
-        <footer className={classes.footer}> {footer} </footer>
-      )}
+        {footer && (
+          <footer className={classes.footer}> {footer} </footer>
+        )}
 
       </section>
       <div 
