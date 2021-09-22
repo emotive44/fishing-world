@@ -15,7 +15,7 @@ function App() {
     setThemeMode(theme);
     setAuthToken(token);
   }, []);
-  console.log('da')
+  console.log('da2')
 
   return (
     <>
