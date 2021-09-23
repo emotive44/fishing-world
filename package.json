@@ -1,4 +1,5 @@
 {
+  "homepage": "http://emotive44.github.io/fishing-world",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -60,6 +61,7 @@
   "devDependencies": {
     "@types/react": "^16.14.14",
     "@types/react-router-dom": "^5.1.8",
+    "gh-pages": "^3.2.3",
     "react-app-rewire-alias": "^1.0.3",
     "react-app-rewired": "^2.1.8"
   }
