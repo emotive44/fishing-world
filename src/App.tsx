@@ -16,6 +16,8 @@ function App() {
     setAuthToken(token);
   }, []);
 
+  console.log('test')
+
   return (
     <>
       <aside className={styles.sideBar} onClick={() => console.log('aside')}>
