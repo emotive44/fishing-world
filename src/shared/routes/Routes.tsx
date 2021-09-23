@@ -49,8 +49,8 @@ const Routes: FC<RoutesProps> = ({ isAuth }) => {
 
       <Switch>
         <Suspense fallback={Loading}>
-          <Route exact path="/" component={Home} />
-          <Route exact path='/ui' component={UI} />
+          <Route exact path="/fishing-world" component={Home} />
+          <Route exact path='/fishing-world/ui' component={UI} />
           {/* <Route path='/ui-components' component={UIComponents} />
           <PrivateRoute exact path="/dashboard" isAuth={isAuth} component={Dashboard} /> */}
         </Suspense>
