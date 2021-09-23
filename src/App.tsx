@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import './shared/config/axios';
-import { setAuthToken, setThemeMode, withPreventEvents } from './shared/utils';
-import Routes from './shared/routes/Routes';
-import { LOCALSTORAGE_TOKEN, LOCALSTORAGE_THEME } from './shared/constants';
+import { setAuthToken, setThemeMode, withPreventEvents } from '@utils';
+import { LOCALSTORAGE_TOKEN, LOCALSTORAGE_THEME } from '@constants';
+
+import Routes from '@routes/Routes';
 import styles from './App.module.scss';
 
 const token = localStorage.getItem(LOCALSTORAGE_TOKEN) || '';
