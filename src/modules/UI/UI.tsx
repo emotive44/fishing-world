@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classes from './UI.module.scss';
 
-import { useForm } from '../../shared/hooks';
+import { useForm, useDocumentTitle } from '../../shared/hooks';
 
 import {
   Input, TextArea, CheckBox, RadioBtn,
@@ -17,6 +17,7 @@ import arrayWithImgs from '../../shared/mocks/images';
 
 
 const UIComponents:FC = () => {
+  useDocumentTitle('UI');
   const { 
     state, 
     errors,
@@ -338,10 +339,6 @@ const UIComponents:FC = () => {
           <Avatar abbr="Vildan V" />
           <Avatar abbr="Georgi A" />
           <Avatar abbr="Nikolay" />
-          <Avatar 
-            abbr               = "Marko"
-            image              = "https://scontent.fsof10-1.fna.fbcdn.net/v/t1.6435-9/45359201_1776432789146396_8383390134426402816_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=XAFwOW8FRp4AX_k2UUn&_nc_ht=scontent.fsof10-1.fna&oh=604d14d3bf31c0285ba8a509b2277451&oe=615F458E" 
-          />
         </div>
       
         <Dots 

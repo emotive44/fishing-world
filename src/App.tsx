@@ -1,5 +1,5 @@
 import React, { useEffect, MouseEvent } from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 import '@shared/config/axios';
 import { setAuthToken, setThemeMode, withPreventEvents } from '@utils';
@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       <aside className={styles.sideBar} onClick={() => console.log('aside')}>
         SideBar
         <button onClick={(e) => withPreventEvents(e, setThemeMode)}>Change theme</button>
@@ -32,13 +32,12 @@ function App() {
             Submit
           </Button>
         </form>
+        <Link to="/fishing-world/ui" >UI components</Link>
       </aside>
       <section className={styles.routerCnt}>
-        <Router>
-          <Routes isAuth={token !== ''} />
-        </Router>
+        <Routes isAuth={token !== ''} />
       </section>
-    </>
+    </Router>
   );
 };
 
