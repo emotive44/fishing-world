@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import classes from './UI.module.scss';
 
-import { useForm, useDocumentTitle } from '../../shared/hooks';
-
+import { useForm, useDocumentTitle } from '@hooks';
 import {
   Input, TextArea, CheckBox, RadioBtn,
   Toggle, InfoBox, Divider, Tooltip,
@@ -10,11 +9,8 @@ import {
   Text, Notification, Modal, CustomScroll, Tabs, Tab,
   Datepicker, RangeSlider, Carousel, Select, Option,
   Tag, PhoneInput, ImageGallery, Timeline, TimelineItem,
-} from '../../shared/library';
-
-import timelineData from '../../shared/mocks/timelineData';
-import arrayWithImgs from '../../shared/mocks/images';
-
+} from '@library';
+import { timelineData, images } from '@mocks';
 
 const UIComponents:FC = () => {
   useDocumentTitle('UI');
@@ -614,7 +610,7 @@ const UIComponents:FC = () => {
 
       <div style={{ width: '90%', margin: '10rem auto', height: '45rem' }}>
         <Carousel 
-          imgsData={arrayWithImgs} 
+          imgsData={images} 
           // clickImgChange
           withFooter
         />
@@ -645,7 +641,7 @@ const UIComponents:FC = () => {
       </div>
 
       <div style={{ width: '90%', margin: '0 auto' }}>
-        <ImageGallery imgsData={arrayWithImgs} size='normal' />
+        <ImageGallery imgsData={images} size='normal' />
       </div>
 
       <Button fullWidth>
