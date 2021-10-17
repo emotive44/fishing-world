@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
 import classes from  './Button.module.scss';
 
@@ -12,7 +12,7 @@ interface ButtonProps {
   newBlank      ?: boolean, // if want open url link at new page
   className     ?: string,
   outline       ?: boolean, // if want button to be with transparent background
-  callback      ?: () => any,
+  callback      ?: (e: MouseEvent) => any,
   disabled      ?: boolean,
   loading       ?: boolean,
   fullWidth     ?: boolean,
@@ -31,13 +31,20 @@ const Button: FC<ButtonProps> = ({
   fullWidth,
   className,
 }) => {
-
   const mainClasses: string[] = [classes.medium, classes.button];
+  let cursor = 'pointer';
+
+  if(loading) {
+    cursor = 'wait';
+  }
+
+  if(disabled) {
+    cursor = 'not-allowed';
+  }
 
   if(className) {
     mainClasses.push(className);
   }
-
 
   if (type) {
     mainClasses.push(classes[type]);
@@ -67,8 +74,9 @@ const Button: FC<ButtonProps> = ({
   if(href) {
     return (
       <Link 
-        className   = {linkClasses.join(' ')}
+        style       = {{ cursor }}
         to          = {href ? href : ''}
+        className   = {linkClasses.join(' ')}
         target      = {newBlank ? '_blank' : ''}
       >
         <div className={classes.childrenContainer}>
@@ -81,7 +89,8 @@ const Button: FC<ButtonProps> = ({
   return (
     <button
       onClick       = {callback}
-      disabled      = {disabled}
+      style         = {{ cursor }}
+      disabled      = {disabled || loading}
       className     = {mainClasses.join(' ')}
     >
       {loading ? <Spinner btnSpinner /> : children}

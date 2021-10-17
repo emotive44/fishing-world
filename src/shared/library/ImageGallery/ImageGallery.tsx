@@ -22,21 +22,25 @@ const ImageGallery:FC<ImageGalleryProps> = ({ imgsData, className, size }) => {
     rems = 10;
   }
 
+  const renderImgs = () => {
+    return imgsData.map((img, i) => {
+      return (
+        <img  
+          alt       = ""
+          key       = {i}
+          src       = {img}
+          className = {imgOrientationClasses[i]}
+        />
+      );
+    })
+  }
+
   return (
     <div 
       className={[classes.gallery, className].join(' ')}
       style={{ gridTemplateColumns: `repeat(auto-fit, minmax(${rems}rem, 1fr))`, gridAutoRows: `${rems}rem` }}
     >
-      {imgsData.map((img, i) => {
-        return (
-          <img  
-            alt       = ""
-            key       = {i}
-            src       = {img}
-            className = {imgOrientationClasses[i]}
-          />
-        );
-      })}
+      {renderImgs()}
     </div>
   );
 }

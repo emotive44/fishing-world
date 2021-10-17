@@ -34,9 +34,9 @@ const CheckBox:FC<CheckBoxProps> = ({
           </span>
         }
         <div 
-          onMouseEnter   ={() => setHover(true)} 
-          onMouseLeave   ={() => setHover(false)}
-          className      ={wrapperClasses.join(' ')} 
+          onMouseEnter   = {() => setHover(true)} 
+          onMouseLeave   = {() => setHover(false)}
+          className      = {wrapperClasses.join(' ')} 
         >
           <input 
             hidden

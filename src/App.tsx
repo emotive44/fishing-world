@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, MouseEvent } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import './shared/config/axios';
+import '@shared/config/axios';
 import { setAuthToken, setThemeMode, withPreventEvents } from '@utils';
 import { LOCALSTORAGE_TOKEN, LOCALSTORAGE_THEME } from '@constants';
-
 import Routes from '@routes/Routes';
+import { Button } from '@shared/library';
 import styles from './App.module.scss';
 
 const token = localStorage.getItem(LOCALSTORAGE_TOKEN) || '';
@@ -17,8 +17,6 @@ function App() {
     setAuthToken(token);
   }, []);
 
-  console.log('test')
-
   return (
     <>
       <aside className={styles.sideBar} onClick={() => console.log('aside')}>
@@ -27,7 +25,12 @@ function App() {
 
         <form>
           <div>Form</div>
-          <button onClick={(e) => withPreventEvents(e, () => console.log('submit'))}>Submit</button>
+          <Button
+            loading
+            callback={(e: MouseEvent) => withPreventEvents(e, () => console.log('submit'))}
+          >
+            Submit
+          </Button>
         </form>
       </aside>
       <section className={styles.routerCnt}>

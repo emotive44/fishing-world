@@ -98,10 +98,7 @@ const Notification: FC<NotificationProps> = ({
         </div>
         <Text textIndent={10} fontSize={15} > {message} </Text>
       </div>
-      <span 
-        className           = {classes.close}
-        onClick             = {closeNotification}
-      >
+      <span className={classes.close} onClick={closeNotification}>
         <i className="far fa-times-circle" />
       </span>
     </div>

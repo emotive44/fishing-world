@@ -25,12 +25,10 @@ const Tabs:FC<TabsProps> = ({
   children,
   noUrlChange,
 }) => {
-  // get current location
   const location = useLocation();
-  
-  const firstTab = children[0].props.label;
-  // set active a first tabName
   const [activeTab, setActiveTab] = useState('');
+  const firstTab = children[0].props.label;
+  const containerClasses = [classes.container, classes[position]];
 
   // after refresh to stay active the current tabname
   useEffect(() => {
@@ -42,8 +40,6 @@ const Tabs:FC<TabsProps> = ({
       setActiveTab(firstTab)
     }
   }, [location.search, firstTab]);
-
-  const containerClasses = [classes.container, classes[position]];
 
   // return array with one element [{}], which contain info for active tabName
   const content: IChildProps[] = children.filter((child: IChildProps) => child.props.label === activeTab);

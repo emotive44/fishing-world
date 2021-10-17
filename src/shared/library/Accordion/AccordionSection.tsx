@@ -49,6 +49,39 @@ const AccordionSection: FC<AccordionSectionProps> = ({
   } else {
     childrenClasses.push(classes.children);
   }
+
+  const renderContent = () => {
+    //for horizontal children
+    if(horizontal) {
+      return (
+        <div 
+          ref={childrenRef } 
+          className={childrenClasses.join(' ')} 
+          style= {{
+            maxWidth: `${horizontal && isOpen ? `${maxWidth}rem` : '0px'}`,
+            height: `${sectionHeight}rem`,
+            margin: `${horizontal && !isOpen ? '0.5rem 0' : '0.5rem 1rem'}`
+          }}
+        >
+          {children} 
+        </div>
+      );
+    }
+
+    // for vertical children
+    return (
+      <div 
+        ref={childrenRef } 
+        className={childrenClasses.join(' ')} 
+        style= {{
+          maxHeight: `${isOpen ? `${height}px` : '0px'}`,
+          marginTop: `${!isOpen ? '-0.5rem' : '0'}`,
+        }}
+      >
+        {children} 
+      </div>
+    );
+  }
     
   return (
     <div className={classesSection.join(' ')}>
@@ -63,35 +96,7 @@ const AccordionSection: FC<AccordionSectionProps> = ({
           )}
         </div>
       </div>
-
-      {/* for horizontal children */}
-      {horizontal && (
-        <div 
-          ref={childrenRef } 
-          className={childrenClasses.join(' ')} 
-          style= {{
-            maxWidth: `${horizontal && isOpen ? `${maxWidth}rem` : '0px'}`,
-            height: `${sectionHeight}rem`,
-            margin: `${horizontal && !isOpen ? '0.5rem 0' : '0.5rem 1rem'}`
-          }}
-        >
-          {children} 
-        </div>
-      )} 
-
-      {/* for vertical children */}
-      {!horizontal && (
-        <div 
-          ref={childrenRef } 
-          className={childrenClasses.join(' ')} 
-          style= {{
-            maxHeight: `${isOpen ? `${height}px` : '0px'}`,
-            marginTop: `${!isOpen ? '-0.5rem' : '0'}`,
-          }}
-        >
-          {children} 
-        </div>
-      )} 
+      {renderContent()}
     </div>
   );
 }

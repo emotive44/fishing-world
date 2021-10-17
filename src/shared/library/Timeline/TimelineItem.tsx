@@ -42,10 +42,10 @@ const TimelineItem:FC<TimelineItemProps> = ({
   return (
     <div ref={ref} className={[classes.sign, classes[animateClass]].join(' ')}>
       {icon && (
-          <span className={classes.icon} style={{ backgroundColor: colors[month] }}>
-            {icon}
-          </span>
-        )}
+        <span className={classes.icon} style={{ backgroundColor: colors[month] }}>
+          {icon}
+        </span>
+      )}
       <div className={classes.wrapper} style={{ backgroundColor: colors[month] }}>
         <span className={classes['left-handle']} style={{ backgroundColor: colors[month] }} />
         <span className={classes['right-handle']} style={{ backgroundColor: colors[month] }} />

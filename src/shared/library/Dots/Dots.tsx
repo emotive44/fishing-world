@@ -31,25 +31,28 @@ const Dots: FC<DotsProps> = ({
     setRight(el.getBoundingClientRect().width + 3);
   }, []);
 
+  const renderDots = () => {
+    return Array.from({ length: count }).map((_, i) => {
+      return (
+        <div key={i}
+          className    = {classes.dot}
+          style={{
+            width      : `${dotSize}px`,
+            height     : `${dotSize}px`,
+            background : dotColor,
+          }}
+        />
+      );
+    })
+  }
+
   return (
     <div className={mainCntClasses.join(' ')}>
       <div className={classes.children}>
         {children}
-
         {/* create array with N elemnets depends by COUNT props */}
         <div className={classes.dots} style={{ right: `-${right}px` }} ref={dotsContainer} >
-          {Array.from({ length: count }).map((_, i) => {
-            return (
-              <div key={i}
-                className    = {classes.dot}
-                style={{
-                  width      : `${dotSize}px`,
-                  height     : `${dotSize}px`,
-                  background : dotColor,
-                }}
-              />
-            );
-          })}
+          {renderDots()}
         </div>
       </div>
     </div>

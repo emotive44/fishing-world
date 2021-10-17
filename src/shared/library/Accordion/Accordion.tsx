@@ -1,5 +1,5 @@
 import React, { FC, useState,useEffect } from 'react';
-import classes from './Accordion.module.css';
+import classes from './Accordion.module.scss';
 
 import AccordionSection from './AccordionSection';
 

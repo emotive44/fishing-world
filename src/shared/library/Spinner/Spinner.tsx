@@ -17,7 +17,7 @@ const Spinner: FC<SpinnerProps> = ({
   }
 
   return (
-    <span className={spinnerClasses.join(' ')}>
+    <span className={spinnerClasses.join(' ')} onClick={(e) => e.stopPropagation()}>
       <img
         src={spinnerSrc}
         alt=""
