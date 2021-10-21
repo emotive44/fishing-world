@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
-import classes from './UI.module.scss';
 
-import { useForm, useDocumentTitle } from '../../shared/hooks';
-
+import { useForm, useDocumentTitle } from '@hooks';
 import {
   Input, TextArea, CheckBox, RadioBtn,
   Toggle, InfoBox, Divider, Tooltip,
@@ -10,11 +8,10 @@ import {
   Text, Notification, Modal, CustomScroll, Tabs, Tab,
   Datepicker, RangeSlider, Carousel, Select, Option,
   Tag, PhoneInput, ImageGallery, Timeline, TimelineItem,
-} from '../../shared/library';
+} from '@library';
+import { timelineData, images as arrayWithImgs } from '@mocks';
 
-import timelineData from '../../shared/mocks/timelineData';
-import arrayWithImgs from '../../shared/mocks/images';
-
+import classes from './UI.module.scss';
 
 const UIComponents:FC = () => {
   useDocumentTitle('UI');

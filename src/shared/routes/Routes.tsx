@@ -1,15 +1,12 @@
 import React, { FC, lazy, Suspense, CSSProperties } from "react";
 import { Route, Router, Switch, useHistory } from "react-router-dom";
 
-import PrivateRoute from "./PrivateRoute";
-import { Notification } from "../library";
-import { useNetworkStatus } from "../hooks";
+import PrivateRoute from "@routes/PrivateRoute";
+import { Notification } from "@library";
+import { useNetworkStatus } from "@hooks";
 
-// import Navbar from '../components/Navbar/Navbar';
-const Home = lazy(() => import('../../modules/Home/Home'));
-const UI = lazy(() => import('../../modules/UI/UI'))
-// const Dashboard = lazy(() => import('../../modules/Dashboard/Dashboard'));
-// const UIComponents = lazy(() => import('../../modules/UIComponents/UIComponents'));
+const Home = lazy(() => import('@modules/Home/Home'));
+const UI = lazy(() => import('@modules/UI/UI'))
 
 interface RoutesProps {
   isAuth: boolean;

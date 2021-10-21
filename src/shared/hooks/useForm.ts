@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { validate } from '../utils';
+import { validate } from '@utils';
 
 interface IState {
   [key: string]: any,

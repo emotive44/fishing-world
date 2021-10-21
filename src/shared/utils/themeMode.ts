@@ -1,4 +1,4 @@
-import { THEME_DARK, THEME_DEFAULT, LOCALSTORAGE_THEME } from '../constants';
+import { THEME_DARK, THEME_DEFAULT, LOCALSTORAGE_THEME } from '@constants';
 
 const setThemeMode = (theme?: string) => {
   const el = document.getElementsByTagName('html')[0]; 

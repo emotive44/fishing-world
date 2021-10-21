@@ -1,7 +1,8 @@
 import React, { FC, useState } from 'react';
 import moment from 'moment';
 
-import { calendarSrc } from '../../../assets/images';
+import { calendarSrc } from '@assets/images';
+
 import { getPlaceHolder, getCurrDateFormat } from './helpers';
 import classes from './Datepicker.module.scss';
 
