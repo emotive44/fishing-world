@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react';
-
-import { useImageOrientation } from '@hooks';
 import classes from './Carousel.module.scss';
+import { useImageOrientation } from '../../hooks';
 
 
 interface CarouselProps {

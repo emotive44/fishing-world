@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Input } from '@library';
+import { Input } from '../../shared/library';
+
 import classes from './Home.module.scss';
 
 const Home = () => {
