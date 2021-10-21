@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { spinnerSrc } from '@assets/images';
+import { spinnerSrc } from '../../../assets/images';
 import classes from './Spinner.module.scss';
 
 interface SpinnerProps {

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-import env from '@config/env';
+import env from '../config/env';
 
 const useDocumentTitle = (title: string) => {
   const initialTitle = useRef(document.title);
