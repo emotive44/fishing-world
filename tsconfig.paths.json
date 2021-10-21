@@ -2,10 +2,19 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-			"@shared/*": ["src/shared/*"],
+      "@assets/*": ["src/assets/*"],
+      "@modules/*": ["src/modules/*"],
+      "@shared/*": ["src/shared/*"],
+      "@components/*": ["src/shared/components/*"],
+      "@config/*": ["src/shared/config/*"],
 			"@constants": ["src/shared/constants"],
-      "@utils": ["src/shared/utils"],
-			"@routes/*": ["src/shared/routes/*"]
+      "@hooks": ["src/shared/hooks"],
+      "@library": ["src/shared/library"],
+      "@mocks": ["src/shared/mocks"],
+      "@models/*": ["src/shared/models/*"],
+			"@routes/*": ["src/shared/routes/*"],
+      "@services/*": ["src/shared/services/*"],
+      "@utils": ["src/shared/utils"]
     }
   }
 }
