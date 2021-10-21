@@ -1,7 +1,8 @@
 import React, { FC, ReactElement } from 'react';
-import classes from './TimelineItem.module.scss';
 import moment from 'moment';
-import { useAnimateItemOnShow } from '../../hooks';
+
+import { useAnimateItemOnShow } from '@hooks';
+import classes from './TimelineItem.module.scss';
 
 const colors: any = {
   '1'		: '#EBB65D',

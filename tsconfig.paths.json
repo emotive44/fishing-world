@@ -2,10 +2,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@modules/*": ["src/modules/*"],
 			"@shared/*": ["src/shared/*"],
 			"@constants": ["src/shared/constants"],
       "@utils": ["src/shared/utils"],
-			"@routes/*": ["src/shared/routes/*"]
+      "@hooks": ["src/shared/hooks"],
+      "@library": ["src/shared/library"],
+      "@mocks": ["src/shared/mocks"],
+      "@config/*": ["src/shared/config/*"],
+			"@routes/*": ["src/shared/routes/*"],
+      // TODO: add path alias for components, models, services
     }
   }
 }

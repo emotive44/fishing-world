@@ -1,15 +1,13 @@
 import React, { FC, lazy, Suspense, CSSProperties } from "react";
 import { Route, Router, Switch, useHistory } from "react-router-dom";
 
-import PrivateRoute from "./PrivateRoute";
-import { Notification } from "../library";
-import { useNetworkStatus } from "../hooks";
+import { Notification } from "@library";
+import { useNetworkStatus } from "@hooks";
 
-// import Navbar from '../components/Navbar/Navbar';
-const Home = lazy(() => import('../../modules/Home/Home'));
-const UI = lazy(() => import('../../modules/UI/UI'))
-// const Dashboard = lazy(() => import('../../modules/Dashboard/Dashboard'));
-// const UIComponents = lazy(() => import('../../modules/UIComponents/UIComponents'));
+const Home = lazy(() => import('@modules/Home/Home'));
+const UI = lazy(() => import('@modules/UI/UI'));
+
+// import PrivateRoute from "./PrivateRoute";
 
 interface RoutesProps {
   isAuth: boolean;
@@ -31,7 +29,6 @@ const Routes: FC<RoutesProps> = ({ isAuth }) => {
 
   return (
     <Router history={history}>
-      {/* <Navbar /> */}
       <Notification
         type="error"
         position="bottom-left"
@@ -51,8 +48,7 @@ const Routes: FC<RoutesProps> = ({ isAuth }) => {
         <Suspense fallback={Loading}>
           <Route exact path="/fishing-world" component={Home} />
           <Route exact path='/fishing-world/ui' component={UI} />
-          {/* <Route path='/ui-components' component={UIComponents} />
-          <PrivateRoute exact path="/dashboard" isAuth={isAuth} component={Dashboard} /> */}
+          {/* <PrivateRoute exact path="/dashboard" isAuth={isAuth} component={Dashboard} /> */}
         </Suspense>
       </Switch>
     </Router>
