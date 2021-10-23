@@ -105,11 +105,11 @@ const UIComponents:FC = () => {
 
   return (
     <>
-      <Modal 
+      {/* <Modal 
         main                  = {ModalMain}
         title                 = "Modal Title"
         footer                = {ModalFooter}
-      />
+      /> */}
     
       <span onClick={submitHandler}>Submit</span>
       <div className={classes.app}>
@@ -571,12 +571,20 @@ const UIComponents:FC = () => {
         />
       </div>
 
+      <div style={{ height: '9rem' }}>
+        <List
+          emptyText="There is no items"
+          items={[]}
+          renderItem={renderItem}
+        />
+      </div>
+
       <List
         emptyText="There is no items"
         items={listItems}
         renderItem={renderItem}
       />
-
+      
       {/* <div style={{ width: '70%', margin: '1rem auto', height: '30rem'}} >
         <Tabs position="right">
           <Tab 

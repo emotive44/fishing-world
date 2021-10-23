@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 
+import NoneView from '../NoneView/NoneView';
+
 import classes from './List.module.scss';
 
 interface ListProps {
@@ -27,7 +29,7 @@ const List: FC<ListProps> = ({ items, renderItem, className, emptyText }) => {
 
   const renderList = () =>  <ul className={listClasses.join(' ')}>{renderItems()}</ul>
 
-  return items.length > 0 ? renderList() : <div>{emptyText}</div>
+  return items.length > 0 ? renderList() : <NoneView text="There are no items" withIcon />
 }
 
 export default List;
