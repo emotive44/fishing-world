@@ -1,6 +1,7 @@
 export { default as Tag } from './Tag/Tag';
 export { default as Tab } from './Tabs/Tab';
 export { default as Tabs } from './Tabs/Tabs';
+export { default as List } from './List/List';
 export { default as Text } from './Text/Text';
 export { default as Note } from './Note/Note';
 export { default as Dots } from './Dots/Dots';
