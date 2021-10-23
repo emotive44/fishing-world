@@ -3,15 +3,21 @@ import React, { FC } from 'react';
 import { useForm, useDocumentTitle } from '@hooks';
 import {
   Input, TextArea, CheckBox, RadioBtn,
-  Toggle, InfoBox, Divider, Tooltip,
+  Toggle, InfoBox, Divider, Tooltip, List,
   Button, Avatar, Dots, Note, NotFound, Accordion,
   Text, Notification, Modal, CustomScroll, Tabs, Tab,
   Datepicker, RangeSlider, Carousel, Select, Option,
   Tag, PhoneInput, ImageGallery, Timeline, TimelineItem,
 } from '@library';
-import { timelineData, images as arrayWithImgs } from '@mocks';
+import { timelineData, images as arrayWithImgs, listItems } from '@mocks';
 
 import classes from './UI.module.scss';
+
+interface IITem  {
+  id      : number,
+  name    : string,
+  city    : string,
+}
 
 const UIComponents:FC = () => {
   useDocumentTitle('UI');
@@ -57,6 +63,16 @@ const UIComponents:FC = () => {
 
   const submitHandler = () => {
     console.log(state);
+  }
+
+  const renderItem = (item: IITem) => {
+    const { name, city } = item;
+
+    return (
+     <Note>
+       User: {name}, From: {city}
+     </Note>
+    );
   }
 
   const ModalFooter = (
@@ -554,6 +570,12 @@ const UIComponents:FC = () => {
           callbackChange        = {phoneChangeHandler}
         />
       </div>
+
+      <List
+        emptyText="There is no items"
+        items={listItems}
+        renderItem={renderItem}
+      />
 
       {/* <div style={{ width: '70%', margin: '1rem auto', height: '30rem'}} >
         <Tabs position="right">
