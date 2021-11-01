@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react';
 import classes from './Carousel.module.scss';
-import { useImageOrientation } from '@hooks';
-
+import { useImageData } from '@hooks';
 
 interface CarouselProps {
   imgsData           : string[],  // array with img urls
@@ -15,7 +14,7 @@ const Carousel: FC<CarouselProps> = ({
   clickImgChange,
 }) => {
   // get array with image orientation classes depend by imgData
-  const { imgOrientationClasses } = useImageOrientation(imgsData, classes);
+  const { imgOrientationClasses, colors } = useImageData(imgsData, classes);
   const [imgIndx, setImgIndx] = useState(1);
 
   const getPreviousImg = () => {
@@ -58,18 +57,23 @@ const Carousel: FC<CarouselProps> = ({
       }
     }
 
-    const styles: any = {};
+    const cursorStyles: any = {};
     if(imageClasses.includes(classes.current)) {
-      styles.cursor = 'auto';
+      cursorStyles.cursor = 'auto';
     } else {
-      styles.cursor = 'pointer';
+      cursorStyles.cursor = 'pointer';
     }
-
+    
+    let styles = { background: colors[i] };
+    if (clickImgChange) {
+      styles = { ...styles, ...cursorStyles };
+    }
+    
     return (
       <div 
         key               = {i} 
+        style             = {styles}
         className         = {imageClasses.join(' ')}
-        style             = {clickImgChange ? styles : {}}
         onClick           = {clickImgChange ? changeImage : () => {}}
       >
         <img src={img} alt="" />

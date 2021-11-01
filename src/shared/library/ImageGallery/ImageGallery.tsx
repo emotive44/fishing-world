@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import classes from './ImageGallery.module.scss';
-import { useImageOrientation } from '@hooks';
+import { useImageData } from '@hooks';
 
 
 type TSize = 'small' | 'normal' | 'big';
@@ -13,7 +13,7 @@ interface ImageGalleryProps {
 
 const ImageGallery:FC<ImageGalleryProps> = ({ imgsData, className, size }) => {
   // get array with image orientation classes depend by imgData
-  const { imgOrientationClasses } = useImageOrientation(imgsData, classes);
+  const { imgOrientationClasses } = useImageData(imgsData, classes);
 
   let rems = 15;
   if(size === 'big') {
